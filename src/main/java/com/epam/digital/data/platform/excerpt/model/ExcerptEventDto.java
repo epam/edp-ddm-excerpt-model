@@ -3,10 +3,12 @@ package com.epam.digital.data.platform.excerpt.model;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
+import javax.validation.constraints.NotBlank;
 
 public class ExcerptEventDto {
 
   private UUID recordId;
+  @NotBlank
   private String excerptType;
   private Map<String, Object> excerptInputData;
   private boolean requiresSystemSignature;
