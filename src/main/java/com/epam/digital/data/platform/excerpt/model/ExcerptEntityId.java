@@ -6,6 +6,9 @@ public class ExcerptEntityId {
 
   private UUID excerptIdentifier;
 
+  public ExcerptEntityId() {
+  }
+
   public ExcerptEntityId(UUID excerptIdentifier) {
     this.excerptIdentifier = excerptIdentifier;
   }
