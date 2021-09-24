@@ -21,6 +21,8 @@ public class ExcerptRecord {
   private String checksum;
   private String excerptKey;
   private Boolean signatureRequired;
+  private String xDigitalSignature;
+  private String xDigitalSignatureDerived;
   private String xSourceSystem;
   private String xSourceApplication;
   private String xSourceBusinessProcess;
@@ -85,6 +87,22 @@ public class ExcerptRecord {
     this.signatureRequired = signatureRequired;
   }
 
+  public String getxDigitalSignature() {
+    return xDigitalSignature;
+  }
+
+  public void setxDigitalSignature(String xDigitalSignature) {
+    this.xDigitalSignature = xDigitalSignature;
+  }
+
+  public String getxDigitalSignatureDerived() {
+    return xDigitalSignatureDerived;
+  }
+
+  public void setxDigitalSignatureDerived(String xDigitalSignatureDerived) {
+    this.xDigitalSignatureDerived = xDigitalSignatureDerived;
+  }
+
   public String getxSourceSystem() {
     return xSourceSystem;
   }
@@ -142,23 +160,23 @@ public class ExcerptRecord {
       return false;
     }
     ExcerptRecord that = (ExcerptRecord) o;
-    return Objects.equals(id, that.id) && Objects.equals(status, that.status)
-        && Objects.equals(statusDetails, that.statusDetails) && Objects
-        .equals(keycloakId, that.keycloakId) && Objects.equals(checksum, that.checksum)
-        && Objects.equals(excerptKey, that.excerptKey) && Objects
-        .equals(signatureRequired, that.signatureRequired) && Objects
-        .equals(xSourceSystem, that.xSourceSystem) && Objects
-        .equals(xSourceApplication, that.xSourceApplication) && Objects
-        .equals(xSourceBusinessProcess, that.xSourceBusinessProcess) && Objects
-        .equals(xSourceBusinessActivity, that.xSourceBusinessActivity) && Objects
-        .equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
+    return Objects.equals(id, that.id) && status == that.status && Objects.equals(
+        statusDetails, that.statusDetails) && Objects.equals(keycloakId, that.keycloakId)
+        && Objects.equals(checksum, that.checksum) && Objects.equals(excerptKey,
+        that.excerptKey) && Objects.equals(signatureRequired, that.signatureRequired)
+        && Objects.equals(xDigitalSignature, that.xDigitalSignature)
+        && Objects.equals(xDigitalSignatureDerived, that.xDigitalSignatureDerived)
+        && Objects.equals(xSourceSystem, that.xSourceSystem) && Objects.equals(
+        xSourceApplication, that.xSourceApplication) && Objects.equals(
+        xSourceBusinessProcess, that.xSourceBusinessProcess) && Objects.equals(
+        xSourceBusinessActivity, that.xSourceBusinessActivity) && Objects.equals(createdAt,
+        that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects
-        .hash(id, status, statusDetails, keycloakId, checksum, excerptKey, signatureRequired,
-            xSourceSystem, xSourceApplication, xSourceBusinessProcess, xSourceBusinessActivity,
-            createdAt, updatedAt);
+    return Objects.hash(id, status, statusDetails, keycloakId, checksum, excerptKey,
+        signatureRequired, xDigitalSignature, xDigitalSignatureDerived, xSourceSystem,
+        xSourceApplication, xSourceBusinessProcess, xSourceBusinessActivity, createdAt, updatedAt);
   }
 }
