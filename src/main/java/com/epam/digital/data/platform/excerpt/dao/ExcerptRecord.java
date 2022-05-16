@@ -43,6 +43,7 @@ public class ExcerptRecord {
   private String xSourceApplication;
   private String xSourceBusinessProcess;
   private String xSourceBusinessActivity;
+  private String excerptType;
 
   private LocalDateTime createdAt;
   private LocalDateTime updatedAt;
@@ -167,6 +168,14 @@ public class ExcerptRecord {
     this.updatedAt = updatedAt;
   }
 
+  public String getExcerptType() {
+    return excerptType;
+  }
+
+  public void setExcerptType(String excerptType) {
+    this.excerptType = excerptType;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -186,13 +195,15 @@ public class ExcerptRecord {
         xSourceApplication, that.xSourceApplication) && Objects.equals(
         xSourceBusinessProcess, that.xSourceBusinessProcess) && Objects.equals(
         xSourceBusinessActivity, that.xSourceBusinessActivity) && Objects.equals(createdAt,
-        that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
+        that.createdAt) && Objects.equals(updatedAt, that.updatedAt) &&
+        Objects.equals(excerptType, that.excerptType);
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(id, status, statusDetails, keycloakId, checksum, excerptKey,
         signatureRequired, xDigitalSignature, xDigitalSignatureDerived, xSourceSystem,
-        xSourceApplication, xSourceBusinessProcess, xSourceBusinessActivity, createdAt, updatedAt);
+        xSourceApplication, xSourceBusinessProcess, xSourceBusinessActivity, createdAt,
+        updatedAt, excerptType);
   }
 }

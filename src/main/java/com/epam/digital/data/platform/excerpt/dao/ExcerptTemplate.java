@@ -39,6 +39,7 @@ public class ExcerptTemplate {
   private LocalDateTime createdAt;
   private LocalDateTime updatedAt;
   private String checksum;
+  private String templateType;
 
 
   public UUID getId() {
@@ -87,5 +88,13 @@ public class ExcerptTemplate {
 
   public void setChecksum(String checksum) {
     this.checksum = checksum;
+  }
+
+  public String getTemplateType() {
+    return templateType;
+  }
+
+  public void setTemplateType(String templateType) {
+    this.templateType = templateType;
   }
 }
